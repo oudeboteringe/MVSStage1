@@ -1,0 +1,29 @@
+﻿Build started 9/27/2014 6:13:48 PM.
+     1>Project "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\MVSStage1_vc12x.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Performing Custom Build Tools
+         msg: option 'default-buildenv' overridden by command line
+         C:\Marmalade\7.4\s3e\makefile_builder\mkb.py e:/Documents/Michiel/Programmeren/Marmalade/MVSStage1/MVSStage1.mkb --default-buildenv=vc12x --msvc-project
+         Building project: e:/Documents/Michiel/Programmeren/Marmalade/MVSStage1/MVSStage1.mkb
+         done
+       ClCompile:
+         C:\Marmalade\7.4\s3e\bin\CL.exe /c /Ic:/marmalade/7.4/modules/iw2d/h /Ic:/marmalade/7.4/modules/iwgx/h /Ic:/marmalade/7.4/modules/iwgl/h /Ic:/marmalade/7.4/modules/iwutil/h /Ic:/marmalade/7.4/modules/third_party/libjpeg/h /Ic:/marmalade/7.4/modules/third_party/zlib/h /Ic:/marmalade/7.4/modules/third_party/libpng/h /Ic:/marmalade/7.4/modules/iwgeom/h /Ic:/marmalade/7.4/modules/iwresmanager/h /Ic:/marmalade/7.4/extensions/pvrtextool/h /Ic:/marmalade/7.4/modules/iwgxfont/h /Ic:/marmalade/7.4/modules/third_party/tiniconv/source /Ic:/marmalade/7.4/s3e/h /Ic:/marmalade/7.4/s3e/h/ext /Ic:/marmalade/7.4/s3e/h/std /Ic:/marmalade/7.4/s3e/h/std/c++ /Ic:/marmalade/7.4/s3e/h/ext_legacy /Ic:/marmalade/7.4/s3e/h/legacy /I. /Z7 /nologo /W3 /WX- /MP /O2 /Oi /Oy- /X /Gm- /EHsc /MT /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release_MVSStage1_vc12x_gcc_arm\\" /Fd"Release_MVSStage1_vc12x_gcc_arm\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt /S3Eproject /J /Fe"s3e-custom-tool='c:/marmalade/7.4/s3e/gcc/win32/bin/arm-none-eabi-gcc.exe' tooltype=gcc_compiler -funsigned-char -fno-strict-aliasing -fno-stack-protector -fno-short-enums -fshort-wchar -Wall -fomit-frame-pointer -fmessage-length=0 -Wno-unused -Wno-parentheses -save-temps -ffunction-sections -mstructure-size-boundary=8 -march=armv6 -mfloat-abi=soft -mthumb-interwork -mword-relocations -Wno-switch -Wno-psabi -fvisibility=hidden -nostdinc -fPIC --cppflag=-Wno-reorder --cppflag=-fvisibility-inlines-hidden --cppflag=-fno-exceptions --cppflag=-nostdinc++ -O3" /FD  /FI"e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\temp_defines_release.h" c:\marmalade\7.4\extensions\pvrtextool\interface\PVRTexTool_interface.cpp ..\main.cpp
+         ARM Compiling(GCC) c:\marmalade\7.4\extensions\pvrtextool\interface\PVRTexTool_interface.cpp ...
+         ARM Compiling(GCC) e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\main.cpp ...
+       Link:
+         C:\Marmalade\7.4\s3e\bin\link.exe /ERRORREPORT:PROMPT /OUT:"Release_MVSStage1_vc12x_gcc_arm\MVSStage1.s3e" /INCREMENTAL:NO /NOLOGO /LIBPATH:c:/marmalade/7.4/modules/iw2d/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/iwgx/atitools /LIBPATH:c:/marmalade/7.4/modules/iwgx/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/iwgl/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/iwutil/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/third_party/libjpeg/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/third_party/zlib/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/third_party/libpng/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/iwgeom/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/iwresmanager/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/iwgxfont/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/modules/third_party/tiniconv/lib/arm/v6/nofpu/soft /LIBPATH:c:/marmalade/7.4/s3e/lib/arm/v6/nofpu/soft /NODEFAULTLIB:libcmt /MANIFEST:NO /PDB:"Release_MVSStage1_vc12x_gcc_arm\MVSStage1.pdb" /SUBSYSTEM:WINDOWS /OPT:REF /OPT:ICF /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"Release_MVSStage1_vc12x_gcc_arm\MVSStage1.lib" /MACHINE:X86  /include:_IwMain /include:_raise /include:_DllEntryPoint@12 /force:multiple /COMMENT:"s3e-custom-tool='c:/marmalade/7.4/s3e/gcc/win32/bin/arm-none-eabi-g++.exe' tooltype=gcc_linker -Wl,--gc-sections -Wl,--as-needed -march=armv6 -mfloat-abi=soft -mthumb-interwork -pie -Wl,--entry=_IwMain -Wl,--no-enum-size-warning -Wl,-Tlinker_script -lc -lm -Wl,-Map='Release_MVSStage1_vc12x_gcc_arm\/MVSStage1.map' -Wl,--start-group -liw2d -liwgx -liwgl -liwutil -ljpeg -lz -lpng -liwgeom -liwresmanager -liwgxfont -ltiniconv -ls3e_cpp -ls3e -ls3e_api_iwgl -Wl,--end-group --plink:--arch=armv6 --plink:--compiler=rvct --plink:-u" /DLL Release_MVSStage1_vc12x_gcc_arm\PVRTexTool_interface.obj
+         Release_MVSStage1_vc12x_gcc_arm\main.obj
+         ARM Linking(GCC) ...
+         MVSStage1_vc12x.vcxproj -> e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Release_MVSStage1_vc12x_gcc_arm\MVSStage1.s3e
+       PostBuildEvent:
+         echo C:\Marmalade\7.4\s3e\python\python.exe .\process_map.py "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Release_MVSStage1_vc12x_gcc_arm\MVSStage1.s3e"
+         chdir /d "c:\marmalade\7.4\s3e\tools"
+         C:\Marmalade\7.4\s3e\python\python.exe .\process_map.py "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Release_MVSStage1_vc12x_gcc_arm\MVSStage1.s3e"
+         
+         :VCEnd
+         C:\Marmalade\7.4\s3e\python\python.exe .\process_map.py "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Release_MVSStage1_vc12x_gcc_arm\MVSStage1.s3e"
+     1>Done Building Project "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\MVSStage1_vc12x.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:05.76

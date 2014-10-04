@@ -1,0 +1,6 @@
+# comments and whitespace stripped by deployment tool
+[S3E]
+MemSize = 20000000
+[s3e]
+SysAppVersion=0.0.1
+SysAppCaption="MVSStage1"

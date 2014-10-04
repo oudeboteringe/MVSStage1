@@ -1,0 +1,1483 @@
+# 1 "c:/marmalade/7.4/extensions/pvrtextool/interface/PVRTexTool_interface.cpp"
+# 1 "<command-line>"
+# 1 "e:/Documents/Michiel/Programmeren/Marmalade/MVSStage1/build_mvsstage1_vc12x/temp_defines_release.h" 1
+# 1 "<command-line>" 2
+# 1 "c:/marmalade/7.4/extensions/pvrtextool/interface/PVRTexTool_interface.cpp"
+
+
+
+
+
+# 1 "c:/marmalade/7.4/s3e/h/s3eExt.h" 1
+# 15 "c:/marmalade/7.4/s3e/h/s3eExt.h"
+# 1 "c:/marmalade/7.4/s3e/h/s3eTypes.h" 1
+# 35 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+typedef unsigned char s3e_uint8_t;
+typedef signed char s3e_int8_t;
+typedef unsigned short int s3e_uint16_t;
+typedef signed short int s3e_int16_t;
+typedef unsigned int s3e_uint32_t;
+typedef signed int s3e_int32_t;
+# 49 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+  typedef signed long long s3e_int64_t;
+  typedef unsigned long long s3e_uint64_t;
+# 62 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+typedef s3e_uint64_t uint64_t;
+typedef s3e_int64_t int64_t;
+typedef s3e_uint32_t uint32_t;
+typedef s3e_int32_t int32_t;
+typedef s3e_uint16_t uint16_t;
+typedef s3e_int16_t int16_t;
+typedef s3e_uint8_t uint8_t;
+typedef s3e_int8_t int8_t;
+# 84 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+    typedef int intptr_t;
+    typedef unsigned int uintptr_t;
+# 96 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+typedef unsigned int uint;
+typedef unsigned short int ushort;
+typedef unsigned long int ulong;
+typedef unsigned char uint8;
+typedef signed char int8;
+
+
+typedef int64_t int64;
+typedef uint64_t uint64;
+
+
+
+
+typedef unsigned int uint32;
+
+
+
+
+
+
+typedef signed int int32;
+
+
+
+
+
+
+typedef uint16_t uint16;
+
+
+
+
+typedef int16_t int16;
+# 207 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+typedef enum s3eResult
+{
+    S3E_RESULT_SUCCESS = 0,
+    S3E_RESULT_ERROR = 1
+} s3eResult;
+
+
+
+
+typedef uint8 s3eBool;
+# 225 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+typedef wchar_t s3eWChar;
+# 237 "c:/marmalade/7.4/s3e/h/s3eTypes.h"
+typedef int32 (*s3eCallback) (void* systemData, void* userData);
+# 16 "c:/marmalade/7.4/s3e/h/s3eExt.h" 2
+# 1 "c:/marmalade/7.4/s3e/h/s3eDebug.h" 1
+# 56 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+typedef enum s3eDebugProperty
+{
+
+
+
+    S3E_DEBUG_TRACE_ENABLED = 0,
+
+
+
+
+
+    S3E_DEBUG_TRACE_TO_FILE = 1,
+
+
+
+
+    S3E_DEBUG_ASSERT_ENABLED = 2,
+
+
+
+
+
+    S3E_DEBUG_AVAILABLE = 3,
+
+
+
+
+    S3E_DEBUG_FONT_SCALE = 4,
+
+
+
+
+    S3E_DEBUG_FONT_WIDTH = 5,
+
+
+
+
+    S3E_DEBUG_FONT_HEIGHT = 6
+
+} s3eDebugProperty;
+# 113 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" int32 s3eDebugGetInt(s3eDebugProperty property);
+# 131 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" s3eResult s3eDebugSetInt(s3eDebugProperty property, int32 value);
+
+
+
+
+
+
+
+typedef enum s3eDebugCallback
+{
+# 155 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+    S3E_DEBUG_ASSERT = 0,
+# 170 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+    S3E_DEBUG_ERROR = 1,
+
+    S3E_DEBUG_CALLBACK_MAX
+} s3eDebugCallback;
+# 198 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" s3eResult s3eDebugRegister(s3eDebugCallback cbid, s3eCallback fn, void* userData);
+# 215 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" s3eResult s3eDebugUnRegister(s3eDebugCallback cbid, s3eCallback fn);
+# 224 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+typedef enum s3eDebugError
+{
+    S3E_DEBUG_ERR_NONE = 0,
+    S3E_DEBUG_ERR_PARAM = 1,
+    S3E_DEBUG_ERR_TOO_MANY = 2,
+    S3E_DEBUG_ERR_ALREADY_REG = 3,
+    S3E_DEBUG_ERR_NOT_FOUND = 4
+} s3eDebugError;
+# 244 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" s3eDebugError s3eDebugGetError();
+# 257 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" const char* s3eDebugGetErrorString();
+
+typedef enum s3eErrorShowResult
+{
+
+    S3E_ERROR_SHOW_CONTINUE = 0,
+
+    S3E_ERROR_SHOW_STOP = 1,
+
+    S3E_ERROR_SHOW_IGNORE = 2,
+
+
+
+
+
+    S3E_ERROR_SHOW_AGAIN = 3
+} s3eErrorShowResult;
+
+
+
+
+typedef enum s3eMessageType
+{
+
+
+
+
+
+    S3E_MESSAGE_CONTINUE = 0,
+
+
+
+
+
+    S3E_MESSAGE_CONTINUE_STOP = 1,
+
+
+
+
+
+
+    S3E_MESSAGE_CONTINUE_STOP_IGNORE = 2
+} s3eMessageType;
+
+
+
+
+
+
+
+extern "C" s3eBool s3eDebugIsDebuggerPresent();
+# 323 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" void s3eDebugOutputString(const char* pStr);
+# 335 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" s3eErrorShowResult s3eDebugErrorShow(s3eMessageType type, const char* string);
+
+
+
+
+
+
+extern "C" s3eErrorShowResult s3eDebugErrorPrintf(const char* fmt, ...)
+
+__attribute__((format(printf, 1, 2)))
+
+;
+# 360 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" s3eErrorShowResult s3eDebugAssertShow(s3eMessageType type, const char* string);
+# 373 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" void s3eDebugTraceLine(const char* string);
+
+
+
+
+
+
+extern "C" int s3eDebugTracePrintf(const char* fmt, ...)
+
+__attribute__((format(printf, 1, 2)))
+
+;
+
+
+
+
+
+
+extern "C" void s3eDebugTraceClearFile();
+# 400 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" void s3eDebugTraceFlush();
+# 425 "c:/marmalade/7.4/s3e/h/s3eDebug.h"
+extern "C" void s3eDebugPrint(int x, int y, const char* string, s3eBool wrap);
+
+
+
+
+
+
+extern "C" void s3eDebugPrintf(int x, int y, s3eBool wrap, const char* fmt, ...)
+
+__attribute__((format(printf, 4, 5)))
+
+;
+
+
+
+
+
+
+
+extern "C" s3eBool s3eDebugTraceChannelSwitch(const char* channel, s3eBool new_state);
+# 17 "c:/marmalade/7.4/s3e/h/s3eExt.h" 2
+# 40 "c:/marmalade/7.4/s3e/h/s3eExt.h"
+typedef enum s3eExtError
+{
+    S3E_EXT_ERR_NONE = 0,
+    S3E_EXT_ERR_PARAM = 1,
+    S3E_EXT_ERR_NOT_FOUND = 4
+} s3eExtError;
+# 58 "c:/marmalade/7.4/s3e/h/s3eExt.h"
+extern "C" s3eExtError s3eExtGetError();
+# 72 "c:/marmalade/7.4/s3e/h/s3eExt.h"
+extern "C" const char* s3eExtGetErrorString();
+# 105 "c:/marmalade/7.4/s3e/h/s3eExt.h"
+extern "C" s3eResult s3eExtGet(const char* extension, void* functions, uint32 functionsLen);
+# 115 "c:/marmalade/7.4/s3e/h/s3eExt.h"
+extern "C" s3eResult s3eExtGetHash(uint32 hash, void* functions, uint32 functionsLen);
+
+static inline s3eBool s3eExtAvailable(const char* extension, int32 len =0)
+{
+    if (s3eExtGet(extension, __null, len) == S3E_RESULT_SUCCESS)
+        return (1);
+    else
+        return (0);
+}
+# 7 "c:/marmalade/7.4/extensions/pvrtextool/interface/PVRTexTool_interface.cpp" 2
+# 1 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 1
+# 15 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+# 1 "c:/marmalade/7.4/s3e/h/s3eTypes.h" 1
+# 16 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 2
+# 1 "c:/marmalade/7.4/s3e/h/s3eDebug.h" 1
+# 17 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 2
+# 1 "c:/marmalade/7.4/s3e/h/s3eDevice.h" 1
+# 57 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+typedef enum s3eDeviceError
+{
+    S3E_DEVICE_ERR_NONE = 0,
+    S3E_DEVICE_ERR_PARAM = 1,
+    S3E_DEVICE_ERR_TOO_MANY = 2,
+    S3E_DEVICE_ERR_ALREADY_REG = 3,
+    S3E_DEVICE_ERR_NOT_FOUND = 4,
+    S3E_DEVICE_ERR_UNAVAIL = 5,
+    S3E_DEVICE_ERR_DEVICE = 6,
+    S3E_DEVICE_ERR_UNSUPPORTED = 7,
+    S3E_DEVICE_ERR_MEM = 8,
+    S3E_DEVICE_ERR_GENERIC = 9,
+    S3E_DEVICE_ERR_INVALID_DRIVE = 10,
+    S3E_DEVICE_ERR_INVALID_PATH = 11
+} s3eDeviceError;
+# 84 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" s3eDeviceError s3eDeviceGetError();
+# 98 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" const char* s3eDeviceGetErrorString();
+# 107 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+typedef enum s3eDeviceFPUType
+{
+    S3E_DEVICE_FPU_NONE = 0,
+    S3E_DEVICE_FPU_VFP = 1,
+    S3E_DEVICE_FPU_VFPV3 = 2,
+    S3E_DEVICE_FPU_NEON = 3
+} s3eDeviceFPUType;
+
+
+
+
+
+
+typedef enum s3eDeviceProperty
+{
+
+
+
+
+
+
+
+    S3E_DEVICE_OS = 0,
+
+
+
+
+
+    S3E_DEVICE_CLASS = 1,
+# 155 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_ID = 2,
+# 175 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_PHONE_NUMBER = 3,
+
+
+
+
+
+    S3E_DEVICE_LANGUAGE = 4,
+
+
+
+
+
+
+    S3E_DEVICE_STATE = 5,
+# 201 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_FREE_RAM = 6,
+# 214 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_TOTAL_RAM = 7,
+# 233 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_ARCHITECTURE = 8,
+# 243 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_S3E_VERSION = 9,
+# 254 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_BATTERY_LEVEL = 10,
+
+
+
+
+
+
+    S3E_DEVICE_LEFT_SOFTKEY_IS_BACK = 11,
+# 273 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_MAINS_POWER = 12,
+# 282 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_OS_VERSION = 13,
+# 300 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_CHIPSET = 14,
+# 309 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_EXIT_CODE = 15,
+# 327 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_FPU = 16,
+
+
+
+
+
+    S3E_DEVICE_BACK_SOFTKEY_POSITION = 17,
+
+
+
+
+
+    S3E_DEVICE_ADVANCE_SOFTKEY_POSITION = 18,
+# 350 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_SDK_VERSION = 19,
+# 359 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_LOCALE = 20,
+
+
+
+
+
+    S3E_DEVICE_NAME = 21,
+
+
+
+
+
+
+
+    S3E_DEVICE_SUPPORTS_SIGNAL_HANDLING = 22,
+
+
+
+
+
+
+
+    S3E_DEVICE_EXIT_SIGNAL = 23,
+# 401 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_PROXIMITY = 24,
+# 438 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_UNIQUE_ID = 25,
+# 461 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_IMSI = 26,
+# 479 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_SILENT_MODE = 27,
+
+
+
+
+    S3E_DEVICE_NUM_CPU_CORES = 28,
+# 498 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_MEM_TOTAL = 29,
+# 522 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_MEM_FREE = 30,
+
+
+
+
+
+    S3E_DEVICE_TIMEZONE = 31,
+# 546 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_3D_MODE = 32,
+# 556 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_PROCESS_ID = 33,
+
+
+
+
+
+    S3E_DEVICE_SUPPORTS_SUSPEND_RESUME = 34,
+
+
+
+
+
+    S3E_DEVICE_DX_FEATURE_LEVEL = 35,
+
+
+
+
+    S3E_DEVICE_TIMEZONE_STD = 36,
+
+
+
+
+    S3E_DEVICE_TIMEZONE_DST = 37
+
+} s3eDeviceProperty;
+
+
+
+
+
+
+typedef enum s3eDeviceLicPlatID
+{
+    S3E_LICPLAT_ID_NONE = 0x0000,
+
+
+    S3E_LICPLAT_ID_WINDOWS = 0x0001,
+
+    S3E_LICPLAT_LINUX = 0x0002,
+
+    S3E_LICPLAT_OSX = 0x0004,
+
+
+    S3E_LICPLAT_IPHONE = 0x0008,
+
+    S3E_LICPLAT_ANDROID = 0x0010,
+
+    S3E_LICPLAT_QNX = 0x0020,
+
+    S3E_LICPLAT_ROKU = 0x0040,
+
+    S3E_LICPLAT_WP8 = 0x0080,
+
+    S3E_LICPLAT_TIZEN = 0x0100,
+
+    S3E_LICPLAT_WS8 = 0x0200,
+
+    S3E_LICPLAT_LG = 0x0400,
+
+    S3E_LICPLAT_UNSET = 0x10000000,
+    S3E_LICPLAT_ALL = 0x7FFFFFFF
+} s3eDeviceLicPlatID;
+
+
+
+
+
+
+
+typedef enum s3eDeviceOSID
+{
+    S3E_OS_ID_NONE = 0,
+
+
+    S3E_OS_ID_LG = 1,
+
+    S3E_OS_ID_WINDOWS = 3,
+
+    S3E_OS_ID_LINUX = 5,
+
+    S3E_OS_ID_ARM_SEMIH = 8,
+
+    S3E_OS_ID_OSX = 13,
+
+    S3E_OS_ID_IPHONE = 14,
+
+    S3E_OS_ID_ANDROID = 19,
+
+    S3E_OS_ID_QNX = 24,
+
+    S3E_OS_ID_ROKU = 25,
+
+    S3E_OS_ID_WP8 = 26,
+
+    S3E_OS_ID_TIZEN = 27,
+
+    S3E_OS_ID_WS8 = 28,
+
+    S3E_OS_ID_WS81 = 29,
+
+    S3E_OS_ID_WP81 = 30,
+
+    S3E_OS_ID_LAST = 31,
+
+
+
+
+
+
+
+    S3E_OS_ID_BREW = 2,
+
+    S3E_OS_ID_WINMOBILE = 4,
+
+    S3E_OS_ID_WIPI = 6,
+
+    S3E_OS_ID_NDS = 7,
+
+    S3E_OS_ID_NUCLEUS = 9,
+
+    S3E_OS_ID_NGI = 10,
+
+    S3E_OS_ID_WINCE = 11,
+
+    S3E_OS_ID_SHARPEMP = 12,
+
+    S3E_OS_ID_UIQ = 15,
+
+    S3E_OS_ID_PS3 = 16,
+
+    S3E_OS_ID_X360 = 17,
+
+    S3E_OS_ID_WEBOS = 20,
+
+    S3E_OS_ID_PSP = 21,
+
+    S3E_OS_ID_WII = 22,
+
+    S3E_OS_ID_MEEGO = 23,
+
+} s3eDeviceOSID;
+
+
+
+
+
+
+
+typedef enum s3eDeviceClassID
+{
+    S3E_DEVICE_CLASS_UNKNOWN = 0,
+
+    S3E_DEVICE_CLASS_WINDOWS_GENERIC = 3000,
+    S3E_DEVICE_CLASS_WINDOWS_PHONE = 3010,
+    S3E_DEVICE_CLASS_WINDOWS_STORE = 3020,
+    S3E_DEVICE_CLASS_LINUX_GENERIC = 5000,
+    S3E_DEVICE_CLASS_LINUX_DESKTOP = 5001,
+    S3E_DEVICE_CLASS_LINUX_EMBED = 5002,
+    S3E_DEVICE_CLASS_ARM_SEMIH_GENERIC = 8000,
+    S3E_DEVICE_CLASS_OSX_DESKTOP = 11000,
+    S3E_DEVICE_CLASS_IPHONE = 12000,
+    S3E_DEVICE_CLASS_ANDROID_GENERIC = 16000,
+    S3E_DEVICE_CLASS_QNX = 19000,
+    S3E_DEVICE_CLASS_TIZEN_GENERIC = 20000,
+
+    S3E_DEVICE_CLASS_SYMBIAN_GENERIC = 1000,
+    S3E_DEVICE_CLASS_SYMBIAN_SERIES60 = 1001,
+    S3E_DEVICE_CLASS_SYMBIAN_SERIES60_EMULATOR = 1002,
+    S3E_DEVICE_CLASS_SYMBIAN_UIQ = 1003,
+    S3E_DEVICE_CLASS_SYMBIAN_UIQ_EMULATOR = 1004,
+    S3E_DEVICE_CLASS_BREW_GENERIC = 2000,
+    S3E_DEVICE_CLASS_BREW_QCIF_3G = 2001,
+    S3E_DEVICE_CLASS_BREW_QCIF_25G = 2002,
+    S3E_DEVICE_CLASS_BREW_SQCIF_25G = 2003,
+    S3E_DEVICE_CLASS_BREW_QVGA_3G = 2004,
+    S3E_DEVICE_CLASS_WINCE_GENERIC = 4000,
+    S3E_DEVICE_CLASS_WINMOBILE_SP = 4001,
+    S3E_DEVICE_CLASS_WINMOBILE_PPC = 4002,
+    S3E_DEVICE_CLASS_WIPI_GENERIC = 6000,
+    S3E_DEVICE_CLASS_NDS_GENERIC = 7000,
+    S3E_DEVICE_CLASS_NDS_NDSI = 7001,
+    S3E_DEVICE_CLASS_NUCLEUS_GENERIC = 9000,
+    S3E_DEVICE_CLASS_NGI_GENERIC = 10000,
+    S3E_DEVICE_CLASS_PS3 = 13000,
+    S3E_DEVICE_CLASS_X360 = 14000,
+    S3E_DEVICE_CLASS_BADA_GENERIC = 15000,
+    S3E_DEVICE_CLASS_PSP = 17000,
+    S3E_DEVICE_CLASS_WII = 18000
+
+} s3eDeviceClassID;
+
+
+
+
+typedef enum s3eDeviceLanguage
+{
+    S3E_DEVICE_LANGUAGE_UNKNOWN = 0,
+    S3E_DEVICE_LANGUAGE_ENGLISH = 1,
+    S3E_DEVICE_LANGUAGE_FRENCH = 2,
+    S3E_DEVICE_LANGUAGE_GERMAN = 3,
+    S3E_DEVICE_LANGUAGE_SPANISH = 4,
+    S3E_DEVICE_LANGUAGE_ITALIAN = 5,
+    S3E_DEVICE_LANGUAGE_PORTUGUESE = 6,
+    S3E_DEVICE_LANGUAGE_DUTCH = 7,
+    S3E_DEVICE_LANGUAGE_TURKISH = 8,
+    S3E_DEVICE_LANGUAGE_CROATIAN = 9,
+    S3E_DEVICE_LANGUAGE_CZECH = 10,
+    S3E_DEVICE_LANGUAGE_DANISH = 11,
+    S3E_DEVICE_LANGUAGE_FINNISH = 12,
+    S3E_DEVICE_LANGUAGE_HUNGARIAN = 13,
+    S3E_DEVICE_LANGUAGE_NORWEGIAN = 14,
+    S3E_DEVICE_LANGUAGE_POLISH = 15,
+    S3E_DEVICE_LANGUAGE_RUSSIAN = 16,
+    S3E_DEVICE_LANGUAGE_SERBIAN = 17,
+    S3E_DEVICE_LANGUAGE_SLOVAK = 18,
+    S3E_DEVICE_LANGUAGE_SLOVENIAN = 19,
+    S3E_DEVICE_LANGUAGE_SWEDISH = 20,
+    S3E_DEVICE_LANGUAGE_UKRAINIAN = 21,
+    S3E_DEVICE_LANGUAGE_GREEK = 22,
+    S3E_DEVICE_LANGUAGE_JAPANESE = 23,
+    S3E_DEVICE_LANGUAGE_SIMPL_CHINESE = 24,
+    S3E_DEVICE_LANGUAGE_TRAD_CHINESE = 25,
+    S3E_DEVICE_LANGUAGE_KOREAN = 26,
+    S3E_DEVICE_LANGUAGE_ICELANDIC = 27,
+    S3E_DEVICE_LANGUAGE_FLEMISH = 28,
+    S3E_DEVICE_LANGUAGE_THAI = 29,
+    S3E_DEVICE_LANGUAGE_AFRIKAANS = 30,
+    S3E_DEVICE_LANGUAGE_ALBANIAN = 31,
+    S3E_DEVICE_LANGUAGE_AMHARIC = 32,
+    S3E_DEVICE_LANGUAGE_ARABIC = 33,
+    S3E_DEVICE_LANGUAGE_ARMENIAN = 34,
+    S3E_DEVICE_LANGUAGE_AZERBAIJANI = 35,
+    S3E_DEVICE_LANGUAGE_TAGALOG = 36,
+    S3E_DEVICE_LANGUAGE_BELARUSSIAN = 37,
+    S3E_DEVICE_LANGUAGE_BENGALI = 38,
+    S3E_DEVICE_LANGUAGE_BULGARIAN = 39,
+    S3E_DEVICE_LANGUAGE_BURMESE = 40,
+    S3E_DEVICE_LANGUAGE_CATALAN = 41,
+    S3E_DEVICE_LANGUAGE_ESTONIAN = 42,
+    S3E_DEVICE_LANGUAGE_FARSI = 43,
+    S3E_DEVICE_LANGUAGE_GAELIC = 44,
+    S3E_DEVICE_LANGUAGE_GEORGIAN = 45,
+    S3E_DEVICE_LANGUAGE_GUJARATI = 46,
+    S3E_DEVICE_LANGUAGE_HEBREW = 47,
+    S3E_DEVICE_LANGUAGE_HINDI = 48,
+    S3E_DEVICE_LANGUAGE_INDONESIAN = 49,
+    S3E_DEVICE_LANGUAGE_IRISH = 50,
+    S3E_DEVICE_LANGUAGE_KANNADA = 51,
+    S3E_DEVICE_LANGUAGE_KAZAKH = 52,
+    S3E_DEVICE_LANGUAGE_KHMER = 53,
+    S3E_DEVICE_LANGUAGE_LAO = 54,
+    S3E_DEVICE_LANGUAGE_LATVIAN = 55,
+    S3E_DEVICE_LANGUAGE_LITHUANIAN = 56,
+    S3E_DEVICE_LANGUAGE_MACEDONIAN = 57,
+    S3E_DEVICE_LANGUAGE_MALAY = 58,
+    S3E_DEVICE_LANGUAGE_MALAYALAM = 59,
+    S3E_DEVICE_LANGUAGE_MARATHI = 60,
+    S3E_DEVICE_LANGUAGE_MOLDOVIAN = 61,
+    S3E_DEVICE_LANGUAGE_MONGOLIAN = 62,
+    S3E_DEVICE_LANGUAGE_PUNJABI = 63,
+    S3E_DEVICE_LANGUAGE_ROMANIAN = 64,
+    S3E_DEVICE_LANGUAGE_SINHALESE = 65,
+    S3E_DEVICE_LANGUAGE_SOMALI = 66,
+    S3E_DEVICE_LANGUAGE_SWAHILI = 67,
+    S3E_DEVICE_LANGUAGE_TAJIK = 68,
+    S3E_DEVICE_LANGUAGE_TAMIL = 69,
+    S3E_DEVICE_LANGUAGE_TELUGU = 70,
+    S3E_DEVICE_LANGUAGE_TIBETAN = 71,
+    S3E_DEVICE_LANGUAGE_TIGRINYA = 72,
+    S3E_DEVICE_LANGUAGE_TURKMEN = 73,
+    S3E_DEVICE_LANGUAGE_URDU = 74,
+    S3E_DEVICE_LANGUAGE_UZBEK = 75,
+    S3E_DEVICE_LANGUAGE_VIETNAMESE = 76,
+    S3E_DEVICE_LANGUAGE_WELSH = 77,
+    S3E_DEVICE_LANGUAGE_ZULU = 78
+} s3eDeviceLanguage;
+# 844 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+typedef enum s3eDeviceArchitecture
+{
+    S3E_DEVICE_ARCHITECTURE_ARM4T = 0,
+    S3E_DEVICE_ARCHITECTURE_ARM4 = 1,
+    S3E_DEVICE_ARCHITECTURE_ARM5T = 2,
+    S3E_DEVICE_ARCHITECTURE_ARM5TE = 3,
+    S3E_DEVICE_ARCHITECTURE_ARM5TEJ = 4,
+    S3E_DEVICE_ARCHITECTURE_ARM6 = 5,
+    S3E_DEVICE_ARCHITECTURE_ARM6K = 6,
+    S3E_DEVICE_ARCHITECTURE_ARM6T2 = 7,
+    S3E_DEVICE_ARCHITECTURE_ARM6Z = 8,
+    S3E_DEVICE_ARCHITECTURE_ARM7A = 12,
+    S3E_DEVICE_ARCHITECTURE_X86 = 9,
+    S3E_DEVICE_ARCHITECTURE_PPC = 10,
+    S3E_DEVICE_ARCHITECTURE_AMD64 = 11,
+    S3E_DEVICE_ARCHITECTURE_MIPS = 13,
+    S3E_DEVICE_ARCHITECTURE_MAX = 14
+} s3eDeviceArchitecture;
+# 870 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+typedef enum s3eDeviceSoftKeyPosition
+{
+    S3E_DEVICE_SOFTKEY_BOTTOM_LEFT = 0,
+    S3E_DEVICE_SOFTKEY_BOTTOM_RIGHT = 1,
+    S3E_DEVICE_SOFTKEY_TOP_RIGHT = 2,
+    S3E_DEVICE_SOFTKEY_TOP_LEFT = 3
+} s3eDeviceSoftKeyPosition;
+# 911 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" const char* s3eDeviceGetString(s3eDeviceProperty property);
+# 946 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" int32 s3eDeviceGetInt(s3eDeviceProperty property);
+# 966 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" s3eResult s3eDeviceSetInt(s3eDeviceProperty property, int32 value);
+# 994 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" int64 s3eDeviceYield(int32 ms =0);
+# 1016 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" void s3eDeviceUnYield();
+# 1044 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" void s3eDeviceYieldUntilEvent(int32 ms =0x7fffffffL);
+# 1079 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" s3eResult s3eDeviceExecPushNext(const char* filename, const char* config_prepend =__null, const char* config_append =__null);
+# 1095 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" void s3eDeviceExit(int code =0) __attribute__ ((noreturn));
+
+
+
+
+
+
+typedef enum s3eDeviceState
+{
+
+
+
+
+    S3E_DEVICE_STATE_PAUSED = 3,
+
+
+
+
+
+    S3E_DEVICE_STATE_EXITING = 4,
+
+
+
+
+    S3E_DEVICE_STATE_RUNNING = 5
+} s3eDeviceState;
+# 1132 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+typedef enum s3eDeviceCallback
+{
+# 1145 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_PAUSE = 0,
+# 1157 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_UNPAUSE = 1,
+# 1169 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_EXIT = 2,
+# 1185 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_VOL_UP = 17,
+# 1201 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_VOL_DOWN = 18,
+# 1219 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_MAINS_POWER_CHANGED = 20,
+# 1231 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_BACKGROUND = 22,
+# 1243 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_FOREGROUND = 23,
+# 1260 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_NETWORK_ONLINE = 24,
+# 1277 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_NETWORK_OFFLINE = 25,
+# 1293 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_SIMULATOR_RESTART = 26,
+# 1310 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_APPLICATION_ACTIVE = 27,
+# 1327 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_APPLICATION_INACTIVE = 28,
+# 1344 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_APPLICATION_FULLSCREEN = 29,
+# 1361 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_APPLICATION_THUMBNAIL = 30,
+# 1378 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    S3E_DEVICE_APPLICATION_INVISIBLE = 31,
+
+    S3E_DEVICE_CALLBACK_MAX
+} s3eDeviceCallback;
+# 1399 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+typedef struct s3eDeviceVolChangeInfo
+{
+
+
+
+
+
+    s3eBool m_VolUp;
+# 1424 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+    s3eBool m_OverrideDefaultBehaviour;
+} s3eDeviceVolChangeInfo;
+
+
+
+
+
+typedef struct s3eDeviceStateChangeInfo
+{
+
+
+
+    int32 m_State;
+} s3eDeviceStateChangeInfo;
+# 1459 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" s3eResult s3eDeviceRegister(s3eDeviceCallback cbid, s3eCallback fn, void* userdata);
+# 1479 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" s3eResult s3eDeviceUnRegister(s3eDeviceCallback cbid, s3eCallback fn);
+
+
+
+
+
+
+
+extern "C" void s3eDeviceRequestQuit();
+# 1498 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" s3eBool s3eDeviceCheckQuitRequest();
+# 1508 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" s3eBool s3eDeviceCheckPauseRequest();
+# 1522 "c:/marmalade/7.4/s3e/h/s3eDevice.h"
+extern "C" void s3eDeviceBacklightOn();
+
+
+extern "C" s3eBool s3eDeviceNetworkCheckStart();
+
+
+extern "C" s3eBool s3eDeviceNetworkCheckStop();
+
+
+extern "C" void s3eDeviceLoaderCallStart(s3eBool lock, void* function);
+
+
+extern "C" void s3eDeviceLoaderCallDone(s3eBool lock, void* function);
+# 18 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 2
+# 1 "c:/marmalade/7.4/modules/iwutil/h/IwCore.h" 1
+# 19 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 2
+
+
+# 1 "c:/marmalade/7.4/s3e/h/std/stdarg.h" 1
+# 15 "c:/marmalade/7.4/s3e/h/std/stdarg.h"
+# 1 "c:/marmalade/7.4/s3e/h/std/sys/types.h" 1
+# 16 "c:/marmalade/7.4/s3e/h/std/sys/types.h"
+# 1 "c:/marmalade/7.4/s3e/h/std/stddef.h" 1
+# 15 "c:/marmalade/7.4/s3e/h/std/stddef.h"
+typedef signed int ptrdiff_t;
+
+
+    typedef unsigned int wint_t;
+    typedef unsigned long int wctype_t;
+
+
+
+
+
+
+
+typedef unsigned int size_t;
+# 17 "c:/marmalade/7.4/s3e/h/std/sys/types.h" 2
+# 1 "c:/marmalade/7.4/s3e/h/std/stdint.h" 1
+# 19 "c:/marmalade/7.4/s3e/h/std/stdint.h"
+typedef signed char int_least8_t;
+typedef short int_least16_t;
+typedef long int_least32_t;
+typedef int64_t int_least64_t;
+
+typedef unsigned char uint_least8_t;
+typedef unsigned short uint_least16_t;
+typedef unsigned long uint_least32_t;
+typedef uint64_t uint_least64_t;
+
+typedef signed char int_fast8_t;
+typedef short int_fast16_t;
+typedef long int_fast32_t;
+typedef int64_t int_fast64_t;
+
+typedef unsigned char uint_fast8_t;
+typedef unsigned short uint_fast16_t;
+typedef unsigned long uint_fast32_t;
+typedef uint64_t uint_fast64_t;
+
+typedef int64_t intmax_t;
+typedef uint64_t uintmax_t;
+# 18 "c:/marmalade/7.4/s3e/h/std/sys/types.h" 2
+# 1 "c:/marmalade/7.4/s3e/h/std/sys/select.h" 1
+# 24 "c:/marmalade/7.4/s3e/h/std/sys/select.h"
+struct timeval;
+
+typedef struct fd_set
+{
+    char fds_bits[256/8];
+} fd_set;
+# 39 "c:/marmalade/7.4/s3e/h/std/sys/select.h"
+extern "C" {
+
+int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout);
+
+}
+# 19 "c:/marmalade/7.4/s3e/h/std/sys/types.h" 2
+
+
+
+typedef long off_t;
+
+typedef int64_t off64_t;
+
+
+namespace std
+{
+typedef ::size_t size_t;
+}
+
+
+typedef uint u_int;
+typedef uint8_t u_int8_t;
+typedef uint16_t u_int16_t;
+typedef uint32_t u_int32_t;
+typedef uint64_t u_int64_t;
+
+typedef unsigned short u_short;
+typedef unsigned long u_long;
+typedef unsigned char u_char;
+
+typedef int ssize_t;
+typedef int pid_t;
+typedef short uid_t;
+typedef short gid_t;
+typedef int idtype_t;
+typedef int id_t;
+typedef uint32 mode_t;
+typedef short dev_t;
+typedef short ino_t;
+typedef int key_t;
+typedef void* caddr_t;
+# 16 "c:/marmalade/7.4/s3e/h/std/stdarg.h" 2
+# 55 "c:/marmalade/7.4/s3e/h/std/stdarg.h"
+typedef __builtin_va_list va_list;
+# 22 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 2
+# 1 "c:/marmalade/7.4/s3e/h/std/stdio.h" 1
+# 19 "c:/marmalade/7.4/s3e/h/std/stdio.h"
+struct __XXFILE;
+typedef struct __XXFILE FILE;
+
+typedef uint32 fpos_t;
+# 38 "c:/marmalade/7.4/s3e/h/std/stdio.h"
+extern "C" {
+# 54 "c:/marmalade/7.4/s3e/h/std/stdio.h"
+extern FILE *__aeabi_stdin;
+extern FILE *__aeabi_stdout;
+extern FILE *__aeabi_stderr;
+# 73 "c:/marmalade/7.4/s3e/h/std/stdio.h"
+FILE *fopen(const char *path, const char *mode);
+int fclose(FILE *fp);
+int fcloseall();
+int fflush(FILE *stream);
+
+FILE *fopen(const char *path, const char *mode);
+FILE *fdopen(int fildes, const char *mode);
+FILE *freopen(const char *path, const char *mode, FILE *stream);
+
+size_t fread(void *ptr, size_t size, size_t nmemb, FILE *stream);
+size_t fwrite(const void *ptr, size_t size, size_t nmemb, FILE *stream);
+
+int fputc(int c, FILE *stream);
+int fputs(const char *s, FILE *stream);
+int putc(int c, FILE *stream);
+int putchar(int c);
+int puts(const char *s);
+
+int fgetc(FILE *stream);
+char *fgets(char *s, int size, FILE *stream);
+int getc(FILE *stream);
+int getchar(void);
+char *gets(char *s);
+int ungetc(int c, FILE *stream);
+
+int fseek(FILE *stream, long offset, int whence);
+long ftell(FILE *stream);
+void rewind(FILE *stream);
+int fgetpos(FILE *stream, fpos_t *pos);
+int fsetpos(FILE *stream, fpos_t *pos);
+
+void flockfile(FILE *filehandle);
+int ftrylockfile(FILE *filehandle);
+void funlockfile(FILE *filehandle);
+
+int getc_unlocked(FILE *stream);
+int getchar_unlocked(void);
+int putc_unlocked(int c, FILE *stream);
+int putchar_unlocked(int c);
+
+FILE *popen(const char *command, const char *type);
+int pclose(FILE *stream);
+
+char *tempnam(const char *dir, const char *pfx);
+
+
+
+
+int printf(const char *format, ...) __attribute__((format(printf, 1, 2)));
+
+
+
+int fprintf(FILE *stream, const char* format, ...) __attribute__((format(printf, 2, 3)));
+
+
+
+int sprintf(char *str, const char* format, ...) __attribute__((format(printf, 2, 3)));
+
+
+
+int snprintf(char *str, size_t size, const char *format, ...) __attribute__((format(printf, 3, 4)));
+
+
+
+
+int scanf(const char *format, ...);
+
+
+
+int fscanf(FILE *stream, const char *format, ...);
+
+
+
+int sscanf(const char *str, const char *format, ...);
+
+void clearerr(FILE *stream);
+int feof(FILE *stream);
+int ferror(FILE *stream);
+int fileno(FILE *stream);
+
+int remove(const char *pathname);
+int rename(const char *oldpath, const char *newpath);
+
+void perror(const char *s);
+
+
+
+FILE *tmpfile(void);
+char *tmpnam(char *s);
+
+void setbuf(FILE *stream, char *buf);
+void setbuffer(FILE *stream, char *buf, size_t size);
+void setlinebuf(FILE *stream);
+int setvbuf(FILE *stream, char *buf, int mode , size_t size);
+
+
+
+int vfprintf(FILE *stream, const char *format, va_list ap);
+int vsprintf(char *str, const char *format, va_list ap);
+int vsnprintf(char *str, size_t size, const char *format, va_list ap);
+int vprintf(const char *format, va_list ap);
+int asprintf(char **strp, const char *fmt, ...);
+int vasprintf(char **strp, const char *fmt, va_list ap);
+
+int vscanf(const char *format, va_list ap);
+int vsscanf(const char *str, const char *format, va_list ap);
+int vfscanf(FILE *stream, const char *format, va_list ap);
+
+}
+# 23 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 2
+# 1 "c:/marmalade/7.4/s3e/h/std/stdlib.h" 1
+# 16 "c:/marmalade/7.4/s3e/h/std/stdlib.h"
+# 1 "c:/marmalade/7.4/s3e/h/std/malloc.h" 1
+# 16 "c:/marmalade/7.4/s3e/h/std/malloc.h"
+# 1 "c:/marmalade/7.4/s3e/h/std/alloca.h" 1
+# 17 "c:/marmalade/7.4/s3e/h/std/alloca.h"
+extern "C" {
+
+
+
+
+
+
+    extern void *alloca(size_t __size);
+# 39 "c:/marmalade/7.4/s3e/h/std/alloca.h"
+}
+# 17 "c:/marmalade/7.4/s3e/h/std/malloc.h" 2
+
+extern "C" {
+
+void *calloc(size_t nmemb, size_t size);
+void *malloc(size_t size);
+void free(void *ptr);
+void *realloc(void *ptr, size_t size);
+
+}
+# 17 "c:/marmalade/7.4/s3e/h/std/stdlib.h" 2
+# 28 "c:/marmalade/7.4/s3e/h/std/stdlib.h"
+extern "C" {
+
+double atof(const char* string);
+int atoi(const char *nptr);
+long atol(const char *nptr);
+int64_t atoll(const char *nptr);
+int64_t atoq(const char *nptr);
+int abs(int j);
+long int labs(long int j);
+int64_t llabs(int64_t j);
+void qsort(void *base, size_t nmemb, size_t size, int(*compar)(const void *, const void *));
+void *bsearch(const void *key, const void *base, size_t nmemb, size_t size, int (*compar)(const void *, const void *));
+void abort(void) __attribute__ ((noreturn));
+int putenv(char *string);
+char *getenv(const char *name);
+int setenv(const char *name, const char *value, int overwrite);
+int unsetenv(const char *name);
+void exit(int status) __attribute__ ((noreturn));
+void _exit(int status) __attribute__ ((noreturn));
+void _Exit(int status) __attribute__ ((noreturn));
+unsigned long int strtoul(const char *nptr, char **endptr, int base);
+uint64_t strtoull(const char *nptr, char **endptr, int base);
+long int strtol(const char *nptr, char **endptr, int base);
+int64_t strtoll(const char *nptr, char **endptr, int base);
+double strtod(const char *nptr, char **endptr);
+float strtof(const char *nptr, char **endptr);
+long double strtold(const char *nptr, char **endptr);
+int atexit(void (*function)(void));
+int system(const char *command);
+int posix_memalign(void **memptr, size_t alignment, size_t size);
+char *mktemp(char *templ);
+int mkstemp(char *templ);
+
+
+
+int rand(void);
+void srand(unsigned int seed);
+
+long int random(void);
+void srandom(unsigned int seed);
+
+size_t __ctype_get_mb_cur_max();
+
+
+int mblen(const char *s, size_t n);
+int mbtowc(wchar_t *pwc, const char *s, size_t n);
+int wctomb(char *s, wchar_t wc);
+size_t mbstowcs(wchar_t *dest, const char *src, size_t n);
+size_t wcstombs(char *dest, const wchar_t *src, size_t n);
+
+typedef struct
+{
+    int quot;
+    int rem;
+} div_t;
+
+typedef struct
+{
+    int quot;
+    int rem;
+} ldiv_t;
+
+typedef struct
+{
+    int64_t quot;
+    int64_t rem;
+} lldiv_t;
+
+div_t div(int numerator, int denominator);
+ldiv_t ldiv(long numerator, long denominator);
+lldiv_t lldiv(int64_t numerator, int64_t denominator);
+# 118 "c:/marmalade/7.4/s3e/h/std/stdlib.h"
+}
+# 24 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h" 2
+# 51 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+typedef void(*IwAssertTextCallback)(char* pBuffer);
+
+extern "C" {
+
+typedef s3eErrorShowResult(*IwAssertCallback)(const char* channel, const char* pExpr, const char* pFilename, int32 line, const char* message);
+typedef s3eErrorShowResult(*IwErrorCallback)(const char* message);
+# 65 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+ s3eBool IwDebugTraceIsChannelOn(const char* channel, s3eBool default_on);
+# 91 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+ s3eBool IwDebugTraceChannelSwitch(const char* channel, s3eBool new_state);
+# 101 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+ void IwDebugTraceLinePrintf(const char* fmt, ...)
+
+__attribute__((format(printf, 1, 2)))
+
+;
+
+
+
+
+
+
+ void IwDebugTraceLineVPrintf(const char* fmt, va_list args);
+
+
+ void IwDebugAssertSetUID(uint32 n);
+
+
+
+
+
+
+
+ s3eBool IwDebugAssertIsChannelOn(const char* channel);
+
+
+
+
+
+
+
+ void IwDebugClearConfigCache();
+# 141 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+ void IwDebugAssertSetMessage(const char* fmt, ...)
+
+__attribute__((format(printf, 1, 2)))
+
+;
+# 168 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+ s3eErrorShowResult IwDebugAssertShow(const char* pExpr, const char* pFilename, int32 line, uint8 ignorable);
+
+
+
+
+
+
+ IwAssertTextCallback IwAssertRegisterTextCallback(IwAssertTextCallback fn);
+
+
+
+
+
+
+ IwAssertCallback IwAssertRegisterCallback(IwAssertCallback fn);
+# 192 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+ s3eErrorShowResult IwDebugErrorShow(const char* Args, ...)
+
+__attribute__((format(printf, 1, 2)))
+
+;
+
+
+
+
+
+
+ IwErrorCallback IwDebugErrorRegisterCallback(IwErrorCallback fn);
+
+}
+# 584 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+template <class _To, class _From>
+_To IwSafeCast(_From from)
+{
+# 597 "c:/marmalade/7.4/modules/iwutil/h/IwDebug.h"
+    return static_cast <_To> (from);
+}
+# 8 "c:/marmalade/7.4/extensions/pvrtextool/interface/PVRTexTool_interface.cpp" 2
+
+
+
+# 1 "c:/marmalade/7.4/extensions/pvrtextool/h/PVRTexTool.h" 1
+# 36 "c:/marmalade/7.4/extensions/pvrtextool/h/PVRTexTool.h"
+struct PVRTexToolData {
+
+
+
+
+
+    char m_Channels[4];
+
+
+
+
+    unsigned char m_ChannelSizes[4];
+
+
+
+
+
+    int m_Width;
+
+
+
+
+    int m_Height;
+
+
+
+
+    int m_MipMaps;
+
+
+
+
+
+    unsigned int m_Sizes[12];
+
+
+
+
+    unsigned char* m_Data[12];
+
+
+
+
+
+    bool m_GenerateMips;
+
+
+
+
+    unsigned int m_GLESFormat;
+};
+
+extern "C" {
+
+
+
+
+
+s3eBool PVRTexToolAvailable();
+# 104 "c:/marmalade/7.4/extensions/pvrtextool/h/PVRTexTool.h"
+PVRTexToolData* PVRTexToolConvert(PVRTexToolData* input);
+# 113 "c:/marmalade/7.4/extensions/pvrtextool/h/PVRTexTool.h"
+void PVRTexToolFree(PVRTexToolData* data);
+
+}
+# 12 "c:/marmalade/7.4/extensions/pvrtextool/interface/PVRTexTool_interface.cpp" 2
+# 25 "c:/marmalade/7.4/extensions/pvrtextool/interface/PVRTexTool_interface.cpp"
+typedef PVRTexToolData*(*PVRTexToolConvert_t)(PVRTexToolData* input);
+typedef void(*PVRTexToolFree_t)(PVRTexToolData* data);
+
+
+
+
+typedef struct PVRTexToolFuncs
+{
+    PVRTexToolConvert_t m_PVRTexToolConvert;
+    PVRTexToolFree_t m_PVRTexToolFree;
+} PVRTexToolFuncs;
+
+static PVRTexToolFuncs g_Ext;
+static bool g_GotExt = false;
+static bool g_TriedExt = false;
+static bool g_TriedNoMsgExt = false;
+
+static bool _extLoad()
+{
+    if (!g_GotExt && !g_TriedExt)
+    {
+        s3eResult res = s3eExtGetHash(0xb6b3ceac, &g_Ext, sizeof(g_Ext));
+        if (res == S3E_RESULT_SUCCESS)
+            g_GotExt = true;
+        else
+            s3eDebugAssertShow(S3E_MESSAGE_CONTINUE_STOP_IGNORE, "error loading extension: PVRTexTool");
+
+        g_TriedExt = true;
+        g_TriedNoMsgExt = true;
+    }
+
+    return g_GotExt;
+}
+
+static bool _extLoadNoMsg()
+{
+    if (!g_GotExt && !g_TriedNoMsgExt)
+    {
+        s3eResult res = s3eExtGetHash(0xb6b3ceac, &g_Ext, sizeof(g_Ext));
+        if (res == S3E_RESULT_SUCCESS)
+            g_GotExt = true;
+        g_TriedNoMsgExt = true;
+        if (g_TriedExt)
+            g_TriedExt = true;
+    }
+
+    return g_GotExt;
+}
+
+s3eBool PVRTexToolAvailable()
+{
+    _extLoadNoMsg();
+    return g_GotExt ? (1) : (0);
+}
+
+PVRTexToolData* PVRTexToolConvert(PVRTexToolData* input)
+{
+    ((void)0);
+
+    if (!_extLoad())
+        return __null;
+
+
+
+
+
+    PVRTexToolData* ret = g_Ext.m_PVRTexToolConvert(input);
+
+
+
+
+
+    return ret;
+}
+
+void PVRTexToolFree(PVRTexToolData* data)
+{
+    ((void)0);
+
+    if (!_extLoad())
+        return;
+
+
+
+
+
+    g_Ext.m_PVRTexToolFree(data);
+
+
+
+
+
+    return;
+}

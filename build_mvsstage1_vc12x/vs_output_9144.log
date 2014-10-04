@@ -1,0 +1,11 @@
+1>------ Build started: Project: MVSStage1_vc12x, Configuration: x86 Debug Win32 ------
+1>  Performing Custom Build Tools
+1>  msg: option 'default-buildenv' overridden by command line
+1>  C:\Marmalade\7.4\s3e\makefile_builder\mkb.py e:/Documents/Michiel/Programmeren/Marmalade/MVSStage1/MVSStage1.mkb --buildenv=VC12X --default-buildenv=vc12x --msvc-project
+1>  Building project: e:/Documents/Michiel/Programmeren/Marmalade/MVSStage1/MVSStage1.mkb
+1>  done
+1>  MVSStage1_vc12x.vcxproj -> e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86
+1>  C:\Marmalade\7.4\s3e\python\python.exe .\process_map.py "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86"
+1>  "s3e_plink" -l "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86" 
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+

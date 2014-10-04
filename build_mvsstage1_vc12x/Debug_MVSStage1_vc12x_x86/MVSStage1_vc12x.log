@@ -1,0 +1,26 @@
+﻿Build started 9/27/2014 6:14:44 PM.
+     1>Project "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\MVSStage1_vc12x.vcxproj" on node 2 (Build target(s)).
+     1>CustomBuild:
+         Performing Custom Build Tools
+         msg: option 'default-buildenv' overridden by command line
+         C:\Marmalade\7.4\s3e\makefile_builder\mkb.py e:/Documents/Michiel/Programmeren/Marmalade/MVSStage1/MVSStage1.mkb --buildenv=VC12X --default-buildenv=vc12x --msvc-project
+         Building project: e:/Documents/Michiel/Programmeren/Marmalade/MVSStage1/MVSStage1.mkb
+         done
+       Link:
+         MVSStage1_vc12x.vcxproj -> e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86
+       PostBuildEvent:
+         echo C:\Marmalade\7.4\s3e\python\python.exe .\process_map.py "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86"
+         chdir /d "c:\marmalade\7.4\s3e\tools"
+         C:\Marmalade\7.4\s3e\python\python.exe .\process_map.py "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86"
+         echo "s3e_plink" -l "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86" 
+         chdir /d "c:\marmalade\7.4\s3e\bin"
+         "s3e_plink" -l "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86" 
+         
+         :VCEnd
+         C:\Marmalade\7.4\s3e\python\python.exe .\process_map.py "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86"
+         "s3e_plink" -l "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\Debug_MVSStage1_vc12x_x86\MVSStage1.s86" 
+     1>Done Building Project "e:\Documents\Michiel\Programmeren\Marmalade\MVSStage1\build_mvsstage1_vc12x\MVSStage1_vc12x.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.51
